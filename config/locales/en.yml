@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    attributes:
+      spree/tracker:
+        one: Tracker
+        other: Trackers
+  spree:
+    admin:
+      mailchimp_settings: Mailchimp Settings
