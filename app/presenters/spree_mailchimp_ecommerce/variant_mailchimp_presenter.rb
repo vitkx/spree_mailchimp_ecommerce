@@ -15,7 +15,7 @@ module SpreeMailchimpEcommerce
         sku: variant.sku || variant.id,
         inventory_quantity: variant.stock_items.sum(&:count_on_hand),
         price: (variant.price || 0).to_s,
-        url: "#{::Rails.application.routes.url_helpers.spree_url}products/#{variant.slug}" || "",
+        url: "https://#{variant.product.stores.first.url}/products/#{variant.slug}" || "",
       }.as_json
     end
   end

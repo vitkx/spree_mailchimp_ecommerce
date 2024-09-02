@@ -2,7 +2,6 @@
 
 module SpreeMailchimpEcommerce
   class PromoCodeMailchimpPresenter
-    include Rails.application.routes.url_helpers
     attr_reader :promotion
 
     def initialize(promotion)
@@ -23,7 +22,7 @@ module SpreeMailchimpEcommerce
     private
 
     def redemption_url
-      "#{Rails.application.routes.url_helpers.spree_url}#{promotion.path}"
+      "https://#{promotion.stores.first.url}/#{promotion.path}"
     end
   end
 end

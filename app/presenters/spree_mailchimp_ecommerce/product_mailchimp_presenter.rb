@@ -13,7 +13,7 @@ module SpreeMailchimpEcommerce
         id: Digest::MD5.hexdigest(product.id.to_s),
         title: product.name || "",
         description: product.description || "",
-        url: "#{::Rails.application.routes.url_helpers.spree_url}products/#{product.slug}" || "",
+        url: "https://#{product.stores.first.url}/products/#{product.slug}" || "",
         vendor: product.category&.name || "",
         image_url: image_url,
         variants: variants
